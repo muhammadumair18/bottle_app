@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "352128234726",
+    "project_id": "bottle-app-67d11",
+    "storage_bucket": "bottle-app-67d11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352128234726:android:f3fa089562d3f42877b727",
+        "android_client_info": {
+          "package_name": "com.example.bottle_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352128234726-p0e10b76tj2rh9k7i2ons35fkun1paei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsZDVJ3JxX0C0v_bDkrtWR0n49plxCUhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352128234726-p0e10b76tj2rh9k7i2ons35fkun1paei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352128234726:android:27f308d555595ae077b727",
+        "android_client_info": {
+          "package_name": "com.example.bottle_user_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352128234726-p0e10b76tj2rh9k7i2ons35fkun1paei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsZDVJ3JxX0C0v_bDkrtWR0n49plxCUhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352128234726-p0e10b76tj2rh9k7i2ons35fkun1paei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
