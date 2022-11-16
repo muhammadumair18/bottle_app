@@ -12,7 +12,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-
+//checking the git
 
 AndroidNotificationChannel channel= AndroidNotificationChannel(
   'high_importance_channel', // id
