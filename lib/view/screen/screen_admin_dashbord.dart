@@ -197,8 +197,9 @@ class ScreenAdminDashbord extends StatelessWidget {
                           // String responce=await sendPushMessage();
                           // print('responcee---------------');
                           // print('ressppoonncee is       ${responce}');
-                          // callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'Khatam');
-                          
+                          callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'Khatam');
+                          callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'abad');
+
                         },
                         leading: Icon(Icons.settings,color: Colors.black,),
                         title: Text(
@@ -226,7 +227,7 @@ class ScreenAdminDashbord extends StatelessWidget {
       {required String title, required String body}) async {
     const postUrl = 'https://fcm.googleapis.com/fcm/send';
     final data = {
-      "notification": {"body": "this is a body", "title": "this is a title"},
+      "notification": {"body": "${body}", "title": "${title}"},
       "priority": "high",
       "data": {
         "click_action": "FLUTTER_NOTIFICATION_CLICK",
