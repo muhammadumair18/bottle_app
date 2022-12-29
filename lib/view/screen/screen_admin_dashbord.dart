@@ -61,7 +61,7 @@ class ScreenAdminDashbord extends StatelessWidget {
               Positioned(
                 right: 20,
                 left: 20,
-                top: 100,
+                top: Get.height * 0.12,
                 child: Column(
                   children: [
                     Container(
@@ -198,7 +198,7 @@ class ScreenAdminDashbord extends StatelessWidget {
                           // print('responcee---------------');
                           // print('ressppoonncee is       ${responce}');
                           callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'Khatam');
-                          callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'abad');
+                          // callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'abad');
 
                         },
                         leading: Icon(Icons.settings,color: Colors.black,),
@@ -234,7 +234,7 @@ class ScreenAdminDashbord extends StatelessWidget {
         "id": "1",
         "status": "done"
       },
-      "to": "c5WUHKWeSwinb-4syn00ov:APA91bEXpfa2fAboFY4QLhRPY8nq2gLCNNaOlL-cg1XTfim9nkUqGpD8W0q_mve7BK9Ukggb3Ik98Wh7aIPQOoJL0U_WWMibV35XLv2qX_Njvzt6nYKMj_Zy3zUvbPt2NOUNavdTRmUo"
+      "to": "fyFtTPidQ9um6BJpiiVWfK:APA91bFu2spxSF8JSSEzGF4tIyVx2NltRikQIqErKGGF19BXzPxj4hz-JlenXW4XK9sktmaHbsrLeQMErJUggR1_CZMF0gXtVftBIDcm6xgoZ3AtGy5KFtkjs-nYki7gRbPmOX9nhb0V"
     };
 
     final headers = {
