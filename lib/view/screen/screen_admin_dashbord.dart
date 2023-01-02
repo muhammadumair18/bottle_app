@@ -197,7 +197,7 @@ class ScreenAdminDashbord extends StatelessWidget {
                           // String responce=await sendPushMessage();
                           // print('responcee---------------');
                           // print('ressppoonncee is       ${responce}');
-                          callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'Khatam');
+                          await callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'Khatam');
                           // callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'abad');
 
                         },

@@ -172,7 +172,7 @@ class _MyAppState extends State<MyApp> {
               channel.name,
               channelDescription: channel.description,
               priority: Priority.high,
-              icon: '@mipmap/ic_launcher'
+              icon: '@mipmap/launcher_icon'
             // TODO add a proper drawable resource to android, for now using
             //      one that already exists in example app.
           ),
