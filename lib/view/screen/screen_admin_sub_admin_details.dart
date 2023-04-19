@@ -1,4 +1,5 @@
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/model/sub_admins.dart';
 import 'package:bottle_app/view/screen/screen_admin_dashbord.dart';
 import 'package:custom_utils/custom_utils.dart';
@@ -40,7 +41,7 @@ class _ScreenAdminSubAdminDetailsState extends State<ScreenAdminSubAdminDetails>
                 Get.back();
               },
               icon: Icon(Icons.arrow_back),color: Colors.black,),
-          title: Center(child: Text('Sub Admins Details',style: TextStyle(color: Colors.black),)),
+          title: Center(child: Text(LocaleKeys.subadmindetails.tr,style: TextStyle(color: Colors.black),)),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -77,7 +78,7 @@ class _ScreenAdminSubAdminDetailsState extends State<ScreenAdminSubAdminDetails>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Permissions',style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w500,color: Colors.black),)
+                    Text(LocaleKeys.permissions.tr,style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w500,color: Colors.black),)
                   ],
                 ),
               ),
@@ -90,31 +91,31 @@ class _ScreenAdminSubAdminDetailsState extends State<ScreenAdminSubAdminDetails>
                   _shareStory=value;
                 });
               },
-                title: Text('Share Story',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
+                title: Text(LocaleKeys.sharebottle.tr,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
               CustomSwitchListTile(value: widget.subadmindetail.seeUsers, onChanged: (value){
                 setState(() {
                   _seeUsers=value;
                 });
               },
-                title: Text('See Users',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
+                title: Text(LocaleKeys.seeusers.tr,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
               CustomSwitchListTile(value: widget.subadmindetail.sendNotification, onChanged: (value){
                 setState(() {
                   _sendNotifications=value;
                 });
               },
-                title: Text('Send Notifications',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
+                title: Text(LocaleKeys.sendnotifications.tr,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
               CustomSwitchListTile(value: widget.subadmindetail.bockUser, onChanged: (value){
                 setState(() {
                   _blockUser=value;
                 });
               },
-                title: Text('Block User',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
+                title: Text(LocaleKeys.blockeduser.tr,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
               CustomSwitchListTile(value: widget.subadmindetail.deleteUserPost, onChanged: (value){
                 setState(() {
                   _deleteUserPost=value;
                 });
               },
-                title: Text('Delete User Post',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
+                title: Text(LocaleKeys.deleteuserpost.tr,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15.sp),),),
               SizedBox(height: 50.sp,),
               GestureDetector(onTap: () async{
                 await updateSwichData();
@@ -126,14 +127,14 @@ class _ScreenAdminSubAdminDetailsState extends State<ScreenAdminSubAdminDetails>
                       border: Border.all(width: 1.sp,color: Colors.black)
                   ),
                   padding: EdgeInsets.symmetric(vertical: 5.sp,horizontal: 35.sp),
-                  child: Text('Save Data',style: TextStyle(color: Colors.red,fontSize: 18.sp,fontWeight: FontWeight.w500),),
+                  child: Text(LocaleKeys.savedata.tr,style: TextStyle(color: Colors.red,fontSize: 18.sp,fontWeight: FontWeight.w500),),
                 ),
               ),
               GestureDetector(
                 onTap: () async{
                   await subadminref.doc('${widget.subadmindetail.createdbyAdmin}on${widget.subadmindetail.timeCreated}').delete();
                   Get.offAll(ScreenAdminDashbord());
-                  Get.snackbar('SubAdmin Deleted', '${widget.subadmindetail.fullName} having Email ${widget.subadmindetail.emal} has been deleted.',backgroundColor: Colors.green,colorText: Colors.black);
+                  Get.snackbar(LocaleKeys.subadmindeleted.tr, '${widget.subadmindetail.fullName} ${LocaleKeys.havingemail.tr} ${widget.subadmindetail.emal} ${LocaleKeys.hasbeendeleted.tr}',backgroundColor: Colors.green,colorText: Colors.black);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -141,7 +142,7 @@ class _ScreenAdminSubAdminDetailsState extends State<ScreenAdminSubAdminDetails>
                       border: Border.all(width: 1.sp,color: Colors.red)
                   ),
                   padding: EdgeInsets.symmetric(vertical: 5.sp,horizontal: 35.sp),
-                  child: Text('Remove SubAdmin',style: TextStyle(color: Colors.red,fontSize: 18.sp,fontWeight: FontWeight.w500),),
+                  child: Text(LocaleKeys.removesubadmin.tr,style: TextStyle(color: Colors.red,fontSize: 18.sp,fontWeight: FontWeight.w500),),
                 ),
               )
             ],
@@ -161,9 +162,9 @@ class _ScreenAdminSubAdminDetailsState extends State<ScreenAdminSubAdminDetails>
       'deleteUserPost':_deleteUserPost}).then((value) {
       // Get.back();
       setState(() {isLoadingValue=false;});
-      Get.snackbar('Updated Successfully', 'The SubAdmin data has been updated.',backgroundColor: Colors.green,colorText: Colors.black);
+      Get.snackbar(LocaleKeys.updatedsuccessfully.tr, LocaleKeys.thesubadmindatahasbeenupdated.tr,backgroundColor: Colors.green,colorText: Colors.black);
     }).catchError((onError){
-      Get.snackbar('Error', onError.toString(),backgroundColor: Colors.red,colorText: Colors.black);
+      Get.snackbar(LocaleKeys.error.tr, onError.toString(),backgroundColor: Colors.red,colorText: Colors.black);
     });
   }
 

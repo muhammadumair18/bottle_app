@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/model/admin_posts.dart';
 import 'package:bottle_app/view/screen/screen_admin_dashbord.dart';
 import 'package:custom_utils/custom_utils.dart';
@@ -65,7 +66,7 @@ class _ScreenAdminNewStoryDescriptionState
                 color: Colors.black,
               )),
           title: Text(
-            'New Story',
+            LocaleKeys.newstory.tr,
             style: TextStyle(color: Colors.black,),
           ),
         ),
@@ -85,7 +86,7 @@ class _ScreenAdminNewStoryDescriptionState
                       description=value.toString();
                     },
                     isPasswordField: false,
-                    hint: 'Mention Here',
+                    hint: LocaleKeys.mentionhere.tr,
                     maxLines: 4,
                     limit: 25,
                   )),
@@ -93,7 +94,7 @@ class _ScreenAdminNewStoryDescriptionState
                 onTap: () {
                   setState(() {isLoading=true;});
                   if(description==''){
-                    Get.snackbar('Missing', 'Description must be provided.',backgroundColor: Colors.red,colorText: Colors.black);
+                    Get.snackbar(LocaleKeys.missing.tr, LocaleKeys.descriptionmustbeprovided.tr,backgroundColor: Colors.red,colorText: Colors.black);
                     setState(() {isLoading=false;});
                   }
                   else{
@@ -101,7 +102,7 @@ class _ScreenAdminNewStoryDescriptionState
                       Get.offAll(ScreenAdminDashbord());
                     }).catchError((onError){
                       setState(() {isLoading=false;});
-                      Get.snackbar('Error', onError.toString(),backgroundColor: Colors.red,colorText: Colors.black);
+                      Get.snackbar(LocaleKeys.error.tr, onError.toString(),backgroundColor: Colors.red,colorText: Colors.black);
                     });
                   }
                 },
@@ -112,7 +113,7 @@ class _ScreenAdminNewStoryDescriptionState
                   padding:
                       EdgeInsets.symmetric(vertical: 5.sp, horizontal: 65.sp),
                   child: Text(
-                    'Publish',
+                    LocaleKeys.publish.tr,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.sp,

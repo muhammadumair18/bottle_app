@@ -1,3 +1,4 @@
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/interface/tabbar_listener.dart';
 import 'package:bottle_app/view/layout/layout_admin_notifications_history.dart';
 import 'package:bottle_app/view/layout/layout_admin_notifications_new_notification.dart';
@@ -49,7 +50,7 @@ class _ScreenAdminNotificationsState extends State<ScreenAdminNotifications> wit
                   )),
               title: Center(
                   child: Text(
-                'Send Notifications',
+                    LocaleKeys.sendnotifications.tr,
                 style: TextStyle(color: Colors.black),
               )),
             ),
@@ -71,10 +72,10 @@ class _ScreenAdminNotificationsState extends State<ScreenAdminNotifications> wit
                     ),
                     tabs: [
                       Tab(
-                        text: "History",
+                        text: LocaleKeys.history.tr,
                       ),
                       Tab(
-                        text: "New",
+                        text: LocaleKeys.newww.tr,
                       ),
                     ],
                   ),

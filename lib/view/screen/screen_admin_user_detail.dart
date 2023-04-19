@@ -1,4 +1,5 @@
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/view/screen/screen_admin_posts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +35,7 @@ class _ScreenAdminUserDetailState extends State<ScreenAdminUserDetail> {
               color: Colors.black,
             )),
         title: Text(
-          'User Details',
+          LocaleKeys.userdetails.tr,
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -74,7 +75,7 @@ class _ScreenAdminUserDetailState extends State<ScreenAdminUserDetail> {
                         Column(
                           children: [
                             Text(
-                              'Followers',
+                              LocaleKeys.followers.tr,
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 12.sp,
@@ -99,7 +100,7 @@ class _ScreenAdminUserDetailState extends State<ScreenAdminUserDetail> {
                         Column(
                           children: [
                             Text(
-                              'Following',
+                              LocaleKeys.following.tr,
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 12.sp,
@@ -130,7 +131,7 @@ class _ScreenAdminUserDetailState extends State<ScreenAdminUserDetail> {
                           child: Column(
                             children: [
                               Text(
-                                'Total Posts',
+                                LocaleKeys.totalposts.tr,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 12.sp,
@@ -160,7 +161,7 @@ class _ScreenAdminUserDetailState extends State<ScreenAdminUserDetail> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Name',
+                        LocaleKeys.name.tr,
                         style: TextStyle(
                             color: Colors.black.withOpacity(.5),
                             fontWeight: FontWeight.w400,
@@ -191,7 +192,7 @@ class _ScreenAdminUserDetailState extends State<ScreenAdminUserDetail> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Phone',
+                        LocaleKeys.phone.tr,
                         style: TextStyle(
                             color: Colors.black.withOpacity(.5),
                             fontWeight: FontWeight.w400,
@@ -222,7 +223,7 @@ class _ScreenAdminUserDetailState extends State<ScreenAdminUserDetail> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Date of Birth',
+                        LocaleKeys.dateofbirth.tr,
                         style: TextStyle(
                             color: Colors.black.withOpacity(.5),
                             fontWeight: FontWeight.w400,
@@ -258,7 +259,7 @@ class _ScreenAdminUserDetailState extends State<ScreenAdminUserDetail> {
                     padding: EdgeInsets.symmetric(
                         vertical: 7.sp, horizontal: Get.width * .18),
                     child: Text(
-                      'Block User',
+                      LocaleKeys.blockeduser.tr,
                       style: TextStyle(
                           color: Colors.red,
                           fontSize: 15.sp,
@@ -278,7 +279,7 @@ class _ScreenAdminUserDetailState extends State<ScreenAdminUserDetail> {
           }
           return Center(
             child: Text(
-              'No Data Available',
+              LocaleKeys.nodataavailable.tr,
               style: TextStyle(color: Colors.black, fontSize: 12),
             ),
           );

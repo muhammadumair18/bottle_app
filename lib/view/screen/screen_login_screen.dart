@@ -1,4 +1,5 @@
 import 'package:bottle_app/controllers/controller_registration.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/view/screen/screen_admin_dashbord.dart';
 import 'package:bottle_app/view/screen/screen_forgot_password.dart';
 import 'package:custom_utils/custom_utils.dart';
@@ -32,7 +33,7 @@ class ScreenAdminLoginScreen extends StatelessWidget {
                         )
                     ),
                     child: Center(
-                      child: Text('Share Bottle',
+                      child: Text(LocaleKeys.sharebottle.tr,
                         style: TextStyle(color: Colors.white, fontSize: 33.sp),),
                     ),
                   ),
@@ -60,14 +61,14 @@ class ScreenAdminLoginScreen extends StatelessWidget {
                           SizedBox(height: 5.sp,),
                           Padding(
                             padding: EdgeInsets.symmetric(vertical: 5.sp),
-                            child: Text('Admin Login', style: TextStyle(
+                            child: Text(LocaleKeys.adminlogin.tr, style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20.sp,
                                 fontWeight: FontWeight.w600),),
                           ),
                           Padding(
                             padding: EdgeInsets.symmetric(vertical: 5.sp),
-                            child: Text('Welcome Back', style: TextStyle(
+                            child: Text(LocaleKeys.welcomeback.tr, style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.w300),),
@@ -96,7 +97,7 @@ class ScreenAdminLoginScreen extends StatelessWidget {
                                       left: 15, right: 15, top: 5, bottom: 5),
                                   suffixIconConstraints: BoxConstraints(
                                       minWidth: 50.sp),
-                                  hintText: 'Email'
+                                  hintText: LocaleKeys.email.tr
                               ),
                             ),
                           ),
@@ -125,7 +126,7 @@ class ScreenAdminLoginScreen extends StatelessWidget {
                                         Radius.circular(10)),
                                     borderSide: BorderSide(
                                         width: 1, color: hintColor)),
-                                hintText: 'Password',
+                                hintText: LocaleKeys.password.tr,
                                 suffixIcon: IconButton(onPressed: () {},
                                   icon: Icon(Icons.remove_red_eye),),
                               ),
@@ -147,7 +148,7 @@ class ScreenAdminLoginScreen extends StatelessWidget {
                                             _controller.checkBoxValue.value =
                                             value!;
                                           }),
-                                      Text('Remember me', style: TextStyle(
+                                      Text(LocaleKeys.Rememberme.tr, style: TextStyle(
                                           color: Color(0xff898989),
                                           fontWeight: FontWeight.w400,
                                           fontSize: 10.sp),)
@@ -158,7 +159,7 @@ class ScreenAdminLoginScreen extends StatelessWidget {
                                   Get.to(ScreenForgotPassword());
                                 },
                                     child: Text(
-                                      'Forgot Password?', style: TextStyle(
+                                      LocaleKeys.forgotpassword.tr, style: TextStyle(
                                         color: Color(0xff000000),
                                         fontSize: 10.sp,
                                         fontWeight: FontWeight.w400),))
@@ -177,7 +178,7 @@ class ScreenAdminLoginScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(15.sp)
                               ),
                               child: Center(
-                                child: Text('Sign In', style: TextStyle(
+                                child: Text(LocaleKeys.signin.tr, style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 15,
                                     color: Colors.white

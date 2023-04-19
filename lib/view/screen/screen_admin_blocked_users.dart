@@ -1,4 +1,5 @@
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/interface/setstate_listener.dart';
 import 'package:bottle_app/view/layout/item_admin_users_block_and_unblock_layout.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -24,7 +25,7 @@ class _ScreenAdminBlockedUsersState extends State<ScreenAdminBlockedUsers> imple
               Get.back();
             },
             icon: Icon(Icons.arrow_back,color: Colors.black,)),
-        title: Center(child: Text('Blocked Users',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 20,color: Colors.black),)),
+        title: Center(child: Text(LocaleKeys.blockeduser.tr,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 20,color: Colors.black),)),
         actions: [
           IconButton(
             onPressed: () {},
@@ -42,7 +43,7 @@ class _ScreenAdminBlockedUsersState extends State<ScreenAdminBlockedUsers> imple
           var data=snapshot.data!.docs.map((e) => model.User.fromMap(e.data() as Map<String,dynamic>)).toList();
           print("Length of Document        ${data.length}");
             if(data.length==0){
-              return Center(child: Text('No Blocked Users',style: TextStyle(color: Colors.red,fontSize: 16),));
+              return Center(child: Text(LocaleKeys.noblockedusers.tr,style: TextStyle(color: Colors.red,fontSize: 16),));
           }
             else{
               return ListView.builder(
@@ -63,7 +64,7 @@ class _ScreenAdminBlockedUsersState extends State<ScreenAdminBlockedUsers> imple
           return Center(child: CircularProgressIndicator(color: Colors.blue,),);
         }
 
-        return Center(child: Text('No Data Available',style: TextStyle(color: Colors.red,fontSize: 12.sp),));
+        return Center(child: Text(LocaleKeys.nodataavailable.tr,style: TextStyle(color: Colors.red,fontSize: 12.sp),));
       },),
     );
   }

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/interface/loading_listener.dart';
 import 'package:bottle_app/interface/tabbar_listener.dart';
 import 'package:bottle_app/model/notifications.dart';
@@ -60,10 +61,10 @@ class _LayoutAdminNotificationsNewNotificationsState
                     child: TextFormField(
                       validator: (value) {
                         if (value!.length < 5) {
-                          return 'Less than 5';
+                          return LocaleKeys.lessthan5.tr;
                         }
                         if(value.length>12){
-                          return 'Not greater than 12';
+                          return LocaleKeys.notgreaterthan12.tr;
                         }
                         return null;
                       },
@@ -71,7 +72,7 @@ class _LayoutAdminNotificationsNewNotificationsState
                         title = value;
                       },
                       decoration: InputDecoration(
-                        hintText: 'Title',
+                        hintText: LocaleKeys.title.tr,
                         fillColor: Color(0xFFF6F6F6),
                         filled: true,
                         contentPadding: EdgeInsets.symmetric(
@@ -100,7 +101,7 @@ class _LayoutAdminNotificationsNewNotificationsState
                     child: TextFormField(
                       validator: (value) {
                         if (value!.length < 4) {
-                          return 'Less than 4';
+                          return LocaleKeys.lessthan4.tr;
                         }
                         return null;
                       },
@@ -108,7 +109,7 @@ class _LayoutAdminNotificationsNewNotificationsState
                         description = value;
                       },
                       decoration: InputDecoration(
-                        hintText: 'Description',
+                        hintText: LocaleKeys.description.tr,
                         fillColor: Color(0xFFF6F6F6),
                         filled: true,
                         contentPadding: EdgeInsets.symmetric(
@@ -165,7 +166,7 @@ class _LayoutAdminNotificationsNewNotificationsState
                                   'assets/images/upload_picture_logo.png',
                                 ))),
                             Text(
-                              'Upload File',
+                              LocaleKeys.uploadfile.tr,
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 12.sp,
@@ -206,7 +207,7 @@ class _LayoutAdminNotificationsNewNotificationsState
                   padding:
                       EdgeInsets.symmetric(vertical: 5.sp, horizontal: 55.sp),
                   child: Text(
-                    'Send',
+                    LocaleKeys.send.tr,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.sp,
@@ -242,7 +243,7 @@ class _LayoutAdminNotificationsNewNotificationsState
   Future<String> uploadNotification() async {
     String responce = '';
     if(!(_key.currentState!.validate())){
-      return 'TextField should be OK';
+      return LocaleKeys.textfieldshouldbeok.tr;
     }
     String title = titleController.text;
     String description = descriptionController.text;

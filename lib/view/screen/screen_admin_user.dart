@@ -1,4 +1,5 @@
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/interface/setstate_listener.dart';
 import 'package:bottle_app/model/user.dart' as model;
 import 'package:bottle_app/view/layout/item_admin_users_block_and_unblock_layout.dart';
@@ -23,7 +24,7 @@ class _ScreenAdminUserState extends State<ScreenAdminUser> implements SetstateLi
               Get.back();
             },
             icon: Icon(Icons.arrow_back,color: Colors.black,)),
-        title: Center(child: Text('Users',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 20,color: Colors.black),)),
+        title: Center(child: Text(LocaleKeys.users.tr,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 20,color: Colors.black),)),
         actions: [
           IconButton(
             onPressed: () {},
@@ -44,7 +45,7 @@ class _ScreenAdminUserState extends State<ScreenAdminUser> implements SetstateLi
           var data=snapshot.data!.docs.map((e) => model.User.fromMap(e.data() as Map<String,dynamic>)).toList();
           print(data.length);
             if(data.length == 0){
-            return Center(child: Text('No Data Available',style: TextStyle(color: Colors.red,fontSize: 12),));
+            return Center(child: Text(LocaleKeys.nodataavailable.tr,style: TextStyle(color: Colors.red,fontSize: 12),));
           }
           else{
             return ListView.builder(
@@ -62,7 +63,7 @@ class _ScreenAdminUserState extends State<ScreenAdminUser> implements SetstateLi
             );
           }
         }
-        return Center(child: Text("No Data Available",style: TextStyle(color: Colors.red,fontSize: 12),),);
+        return Center(child: Text(LocaleKeys.nodataavailable.tr,style: TextStyle(color: Colors.red,fontSize: 12),),);
       },),
     );
   }

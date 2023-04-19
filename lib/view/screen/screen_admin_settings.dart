@@ -1,3 +1,4 @@
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -29,7 +30,7 @@ class _ScreenAdminSettingsState extends State<ScreenAdminSettings> {
             )),
         title: Center(
             child: Text(
-          'Settings',
+              LocaleKeys.settings.tr,
           style: TextStyle(color: Colors.black),
         )),
       ),
@@ -43,7 +44,7 @@ class _ScreenAdminSettingsState extends State<ScreenAdminSettings> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Full Name",
+                    LocaleKeys.fullname.tr,
                     style:
                         TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
                   ),
@@ -84,7 +85,7 @@ class _ScreenAdminSettingsState extends State<ScreenAdminSettings> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Email",
+                    LocaleKeys.email.tr,
                     style:
                         TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
                   ),
@@ -125,7 +126,7 @@ class _ScreenAdminSettingsState extends State<ScreenAdminSettings> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Password",
+                    LocaleKeys.password.tr,
                     style:
                         TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
                   ),
@@ -172,7 +173,7 @@ class _ScreenAdminSettingsState extends State<ScreenAdminSettings> {
                   padding:
                       EdgeInsets.symmetric(vertical: 5.sp, horizontal: 55.sp),
                   child: Text(
-                    'Save',
+                    LocaleKeys.save.tr,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.sp,

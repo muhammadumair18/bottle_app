@@ -1,3 +1,4 @@
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/view/layout/item_admin_state_layout.dart';
 import 'package:bottle_app/view/screen/screen_admin_new_story_description.dart';
 import 'package:bottle_app/view/screen/screen_admin_record_video_screen.dart';
@@ -52,7 +53,7 @@ class _ScreenAdminMyStoriesStatesState extends State<ScreenAdminMyStoriesStates>
               color: Colors.black,
             )),
         title: Text(
-          'My Stories',
+          LocaleKeys.mystories.tr,
           style: TextStyle(color: Colors.black),
         ),
         actions: [
@@ -69,7 +70,7 @@ class _ScreenAdminMyStoriesStatesState extends State<ScreenAdminMyStoriesStates>
                               borderRadius: BorderRadius.all(Radius.circular(10.sp))),
                           title: Center(
                               child: Text(
-                            'Add New State',
+                                LocaleKeys.addnewstate.tr,
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w600,
@@ -103,7 +104,7 @@ class _ScreenAdminMyStoriesStatesState extends State<ScreenAdminMyStoriesStates>
                                     });
                                   },
                                   hint: Text(
-                                    'Select State',
+                                    LocaleKeys.selectstate.tr,
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 17.sp),
                                   ),
@@ -122,7 +123,7 @@ class _ScreenAdminMyStoriesStatesState extends State<ScreenAdminMyStoriesStates>
                                   padding: EdgeInsets.symmetric(
                                       vertical: 5.sp, horizontal: 55.sp),
                                   child: Text(
-                                    'Add',
+                                    LocaleKeys.add.tr,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.sp,
@@ -149,7 +150,7 @@ class _ScreenAdminMyStoriesStatesState extends State<ScreenAdminMyStoriesStates>
                       size: 14.sp,
                     )),
                 Text(
-                  'State',
+                  LocaleKeys.state.tr,
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w500,
@@ -193,14 +194,14 @@ class _ScreenAdminMyStoriesStatesState extends State<ScreenAdminMyStoriesStates>
                       height: 3.sp,
                     ),
                     Text(
-                      "Add Story",
+                      LocaleKeys.addstory.tr,
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      "for all",
+                      LocaleKeys.forall.tr,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14.sp,

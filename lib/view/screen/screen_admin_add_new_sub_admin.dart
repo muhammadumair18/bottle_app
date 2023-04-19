@@ -1,4 +1,5 @@
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/model/sub_admins.dart';
 import 'package:bottle_app/view/screen/screen_admin_dashbord.dart';
 import 'package:custom_utils/custom_utils.dart';
@@ -38,7 +39,7 @@ class _ScreenAdminAddNewSubAdminState extends State<ScreenAdminAddNewSubAdmin> {
               )),
           title: Center(
               child: Text(
-            'Add New Sub Admin',
+                LocaleKeys.addnewsubadmin.tr,
             style: TextStyle(color: Colors.black),
           )),
         ),
@@ -83,7 +84,7 @@ class _ScreenAdminAddNewSubAdminState extends State<ScreenAdminAddNewSubAdmin> {
                                         return AlertDialog(
                                           title: Center(
                                               child: Text(
-                                            'Select an Avatar',
+                                                LocaleKeys.selectanavatar.tr,
                                             style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold),
@@ -152,7 +153,7 @@ class _ScreenAdminAddNewSubAdminState extends State<ScreenAdminAddNewSubAdmin> {
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
                               color: Colors.black.withOpacity(.4), fontSize: 17),
-                          hintText: 'Full Name',
+                          hintText: LocaleKeys.fullname.tr,
                           fillColor: Color(0xFFF6F6F6),
                           filled: true,
                           contentPadding: EdgeInsets.symmetric(
@@ -183,7 +184,7 @@ class _ScreenAdminAddNewSubAdminState extends State<ScreenAdminAddNewSubAdmin> {
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
                               color: Colors.black.withOpacity(.4), fontSize: 17),
-                          hintText: 'Email',
+                          hintText: LocaleKeys.email.tr,
                           fillColor: Color(0xFFF6F6F6),
                           filled: true,
                           contentPadding: EdgeInsets.symmetric(
@@ -214,7 +215,7 @@ class _ScreenAdminAddNewSubAdminState extends State<ScreenAdminAddNewSubAdmin> {
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
                               color: Colors.black.withOpacity(.4), fontSize: 17),
-                          hintText: 'Password',
+                          hintText: LocaleKeys.password.tr,
                           fillColor: Color(0xFFF6F6F6),
                           filled: true,
                           contentPadding: EdgeInsets.symmetric(
@@ -277,10 +278,10 @@ class _ScreenAdminAddNewSubAdminState extends State<ScreenAdminAddNewSubAdmin> {
                   String inresponce=await _uploadDataOfSubAdmin();
                   if(inresponce=='success'){
                     Get.back();
-                    Get.snackbar('SubAdmin Added','The SubAdmin Added Successfully',backgroundColor: Colors.green,colorText: Colors.black);
+                    Get.snackbar(LocaleKeys.subadminadded.tr,LocaleKeys.thesubadminaddedsuccessfully.tr,backgroundColor: Colors.green,colorText: Colors.black);
                   }
                   else{
-                    Get.snackbar('Error',inresponce,backgroundColor: Colors.red,colorText: Colors.black);
+                    Get.snackbar(LocaleKeys.error.tr,inresponce,backgroundColor: Colors.red,colorText: Colors.black);
                   }
                 },
                 child: Container(
@@ -290,7 +291,7 @@ class _ScreenAdminAddNewSubAdminState extends State<ScreenAdminAddNewSubAdmin> {
                   padding:
                       EdgeInsets.symmetric(vertical: 5.sp, horizontal: 55.sp),
                   child: Text(
-                    'Add',
+                    LocaleKeys.add.tr,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.sp,
@@ -316,10 +317,10 @@ class _ScreenAdminAddNewSubAdminState extends State<ScreenAdminAddNewSubAdmin> {
     int datee=DateTime.now().millisecondsSinceEpoch;
     String currentUID=FirebaseAuth.instance.currentUser!.uid;
     if(!(email.isEmail)){
-      return 'Email is badly Formatted';
+      return LocaleKeys.emailisbadlyformated.tr;
     }
     if(fullname.length<6 || password.length <6) {
-        return 'Either FullName or Password is less than 6 char';
+        return LocaleKeys.eitherfullnameorpasswordisless.tr;
       }
     SubAdmins subadmin=SubAdmins(
         fullName: fullname,

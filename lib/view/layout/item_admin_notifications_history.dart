@@ -1,3 +1,4 @@
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
@@ -26,7 +27,7 @@ class ItemAdminNotificationHistory extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text('Title: ',style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w400),),
+                  Text('${LocaleKeys.title.tr}: ',style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w400),),
                   Text(title,style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w400),),
                 ],
               ),
@@ -38,7 +39,7 @@ class ItemAdminNotificationHistory extends StatelessWidget {
             height: 8.sp,
           ),
           Text(
-            'Description:',
+            '${LocaleKeys.description.tr}:',
             style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w600),
           ),
           Text(
@@ -51,7 +52,7 @@ class ItemAdminNotificationHistory extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('Attached File: ',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15.sp),),
+                Text('${LocaleKeys.attachedfile.tr}: ',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15.sp),),
                 SizedBox(
                   width: 5.sp,
                 ),

@@ -1,3 +1,5 @@
+import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/view/screen/screen_admin_blocked_users.dart';
 import 'package:bottle_app/view/screen/screen_admin_dashbord.dart';
 import 'package:bottle_app/view/screen/screen_admin_settings.dart';
@@ -9,6 +11,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
@@ -110,7 +113,7 @@ Future<void> main() async{
     sound: true,
   );
   print( await FirebaseMessaging.instance.getToken());
-  runApp(const MyApp());
+  runApp(Phoenix(child: const MyApp()));
   cameras = await availableCameras();
   FirebaseMessaging.instance.onTokenRefresh.listen((fcmToken) {
     // TODO: If necessary send token to application server.
@@ -219,8 +222,12 @@ class _MyAppState extends State<MyApp> {
       return Sizer(
           builder: (context, orientation, deviceType) {
             return GetMaterialApp(
+              translationsKeys: AppTranslation.translations,
+              locale:english==true?Locale("us"):Locale("ur"),
               debugShowCheckedModeBanner: false,
-              home: FirebaseAuth.instance.currentUser != null?ScreenAdminDashbord():ScreenAdminLoginScreen(),
+              home: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: FirebaseAuth.instance.currentUser != null?ScreenAdminDashbord():ScreenAdminLoginScreen()),
               routes: {
                 "red":(_) => ScreenAdminSettings(),
                 "blue":(_) => ScreenAdminBlockedUsers()

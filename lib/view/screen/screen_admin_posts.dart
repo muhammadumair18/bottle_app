@@ -1,4 +1,5 @@
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/model/posts.dart';
 import 'package:bottle_app/view/layout/item_admin_posts_layout.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -35,7 +36,7 @@ class _ScreenAdminPostsState extends State<ScreenAdminPosts> {
               color: Colors.black,
             )),
         title: Text(
-          'Posts',
+          LocaleKeys.posts.tr,
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -65,7 +66,7 @@ class _ScreenAdminPostsState extends State<ScreenAdminPosts> {
           );
         }
         return Center(
-          child: Text('No Data Available',style: TextStyle(color: Colors.red,fontSize: 12),),
+          child: Text(LocaleKeys.nodataavailable.tr,style: TextStyle(color: Colors.red,fontSize: 12),),
         );
       },),
     );

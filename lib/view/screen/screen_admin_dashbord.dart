@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/controllers/controller_registration.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/view/screen/screen_admin_blocked_users.dart';
 import 'package:bottle_app/view/screen/screen_admin_mystories_states.dart';
 import 'package:bottle_app/view/screen/screen_admin_notifications.dart';
@@ -6,16 +9,16 @@ import 'package:bottle_app/view/screen/screen_admin_settings.dart';
 import 'package:bottle_app/view/screen/screen_admin_sub_admins.dart';
 import 'package:bottle_app/view/screen/screen_admin_user.dart';
 import 'package:custom_utils/custom_utils.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:http/http.dart' as http;
 
 
-
 class ScreenAdminDashbord extends StatelessWidget {
-  const ScreenAdminDashbord({Key? key}) : super(key: key);
+  RegistrationController _controller = Get.put(RegistrationController());
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,7 @@ class ScreenAdminDashbord extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Dashboard',
+                        LocaleKeys.dashboard.tr,
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
@@ -79,8 +82,10 @@ class ScreenAdminDashbord extends StatelessWidget {
                           color: Colors.black,
                         ),
                         title: Text(
-                          'Users',
-                          style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w600),
+                          LocaleKeys.users.tr,
+                          style: TextStyle(color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
                         ),
                         trailing: Icon(
                           Icons.keyboard_arrow_right,
@@ -95,14 +100,18 @@ class ScreenAdminDashbord extends StatelessWidget {
                           boxShadow: appBoxShadow,
                           borderRadius: BorderRadius.circular(5.sp)),
                       child: ListTile(
-                        onTap: () {Get.to(ScreenAdminMyStoriesStates());},
+                        onTap: () {
+                          Get.to(ScreenAdminMyStoriesStates());
+                        },
                         leading: Icon(
                           Icons.amp_stories,
                           color: Colors.black,
                         ),
                         title: Text(
-                          'Stories',
-                          style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w600),
+                          LocaleKeys.stories.tr,
+                          style: TextStyle(color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
                         ),
                         trailing: Icon(
                           Icons.keyboard_arrow_right,
@@ -117,11 +126,17 @@ class ScreenAdminDashbord extends StatelessWidget {
                           boxShadow: appBoxShadow,
                           borderRadius: BorderRadius.circular(5.sp)),
                       child: ListTile(
-                        onTap: () {Get.to(ScreenAdminSubAdmins());},
-                        leading: Image.asset('assets/images/subadmin_icon.png',height: 25,width: 25,),
+                        onTap: () {
+                          Get.to(ScreenAdminSubAdmins());
+                        },
+                        leading: Image.asset(
+                          'assets/images/subadmin_icon.png', height: 25,
+                          width: 25,),
                         title: Text(
-                          'SubAdmins',
-                          style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w600),
+                          LocaleKeys.subadmins.tr,
+                          style: TextStyle(color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
                         ),
                         trailing: Icon(
                           Icons.keyboard_arrow_right,
@@ -136,11 +151,16 @@ class ScreenAdminDashbord extends StatelessWidget {
                           boxShadow: appBoxShadow,
                           borderRadius: BorderRadius.circular(5.sp)),
                       child: ListTile(
-                        onTap: () {Get.to(ScreenAdminBlockedUsers());},
-                        leading: Icon(Icons.block_flipped,color: Colors.black,),
+                        onTap: () {
+                          Get.to(ScreenAdminBlockedUsers());
+                        },
+                        leading: Icon(
+                          Icons.block_flipped, color: Colors.black,),
                         title: Text(
-                          'Blocked User',
-                          style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w600),
+                          LocaleKeys.blockeduser.tr,
+                          style: TextStyle(color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
                         ),
                         trailing: Icon(
                           Icons.keyboard_arrow_right,
@@ -155,11 +175,16 @@ class ScreenAdminDashbord extends StatelessWidget {
                           boxShadow: appBoxShadow,
                           borderRadius: BorderRadius.circular(5.sp)),
                       child: ListTile(
-                        onTap: () {Get.to(ScreenAdminNotifications());},
-                        leading: Icon(Icons.notifications,color: Colors.black,),
+                        onTap: () {
+                          Get.to(ScreenAdminNotifications());
+                        },
+                        leading: Icon(
+                          Icons.notifications, color: Colors.black,),
                         title: Text(
-                          'Notifications',
-                          style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w600),
+                          LocaleKeys.notifications.tr,
+                          style: TextStyle(color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
                         ),
                         trailing: Icon(
                           Icons.keyboard_arrow_right,
@@ -174,11 +199,15 @@ class ScreenAdminDashbord extends StatelessWidget {
                           boxShadow: appBoxShadow,
                           borderRadius: BorderRadius.circular(5.sp)),
                       child: ListTile(
-                        onTap: () {Get.to(ScreenAdminSettings());},
-                        leading: Icon(Icons.settings,color: Colors.black,),
+                        onTap: () {
+                          Get.to(ScreenAdminSettings());
+                        },
+                        leading: Icon(Icons.settings, color: Colors.black,),
                         title: Text(
-                          'Settings',
-                          style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w600),
+                          LocaleKeys.settings.tr,
+                          style: TextStyle(color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
                         ),
                         trailing: Icon(
                           Icons.keyboard_arrow_right,
@@ -193,23 +222,55 @@ class ScreenAdminDashbord extends StatelessWidget {
                           boxShadow: appBoxShadow,
                           borderRadius: BorderRadius.circular(5.sp)),
                       child: ListTile(
-                        onTap: () async{
+                        onTap: () async {
                           // String responce=await sendPushMessage();
                           // print('responcee---------------');
                           // print('ressppoonncee is       ${responce}');
-                          await callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'Khatam');
+                          await callOnFcmApiSendPushNotifications(
+                              title: 'Duniya', body: 'Khatam');
                           // callOnFcmApiSendPushNotifications(title: 'Duniya', body: 'abad');
 
                         },
-                        leading: Icon(Icons.settings,color: Colors.black,),
+                        leading: Icon(Icons.message, color: Colors.black,),
                         title: Text(
-                          'Send Message',
-                          style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w600),
+                          LocaleKeys.sendmessage.tr,
+                          style: TextStyle(color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
                         ),
                         trailing: Icon(
                           Icons.keyboard_arrow_right,
                           color: Colors.black,
                         ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 8.sp),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: appBoxShadow,
+                          borderRadius: BorderRadius.circular(5.sp)),
+                      child: ListTile(
+                        leading: Icon(Icons.language, color: Colors.black,),
+                        title: Text(
+                          "Change Language",
+                          style: TextStyle(color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        trailing: Obx(() {
+                          return Switch(
+                            activeColor: Colors.grey,
+                            activeTrackColor: Colors.orange.withOpacity(0.7),
+                            value: _controller.isenglish.value,
+                            onChanged: (bool value) {
+                              _controller.isenglish.value = value;
+                              english=_controller.isenglish.value;
+                              Phoenix.rebirth(context);
+                            },
+
+                          );
+                        }),
                       ),
                     ),
                   ],
@@ -222,7 +283,7 @@ class ScreenAdminDashbord extends StatelessWidget {
     );
   }
 
-  
+
   Future<bool> callOnFcmApiSendPushNotifications(
       {required String title, required String body}) async {
     const postUrl = 'https://fcm.googleapis.com/fcm/send';
@@ -240,7 +301,8 @@ class ScreenAdminDashbord extends StatelessWidget {
     final headers = {
       'content-type': 'application/json',
       'Authorization':
-      'key=AAAAUfx6dOY:APA91bFxxHCGO0VgcPk4G3WNz1K0QZkMhlufgOQTEzElGDp58CK8lcbDh9v7VodMc2XSbsYT0u10BIQfRx-jSmfhbX-wbe7P0gEZWpcUDaGx4Cq1bFQfymWFu6wY3ixmwZx_qSNYk_2K' // 'key=YOUR_SERVER_KEY'
+      'key=AAAAUfx6dOY:APA91bFxxHCGO0VgcPk4G3WNz1K0QZkMhlufgOQTEzElGDp58CK8lcbDh9v7VodMc2XSbsYT0u10BIQfRx-jSmfhbX-wbe7P0gEZWpcUDaGx4Cq1bFQfymWFu6wY3ixmwZx_qSNYk_2K'
+      // 'key=YOUR_SERVER_KEY'
     };
 
     final response = await http.post(Uri.parse(postUrl),

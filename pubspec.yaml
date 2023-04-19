@@ -52,6 +52,8 @@ dependencies:
   flutter_local_notifications: ^11.0.0
   http: ^0.13.5
   flutter_launcher_icons: ^0.11.0
+  get_cli: ^1.8.1
+  flutter_phoenix: ^1.1.0
 
 
 dev_dependencies:

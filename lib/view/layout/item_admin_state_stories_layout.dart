@@ -1,3 +1,4 @@
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:custom_utils/custom_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -73,7 +74,7 @@ class _ItemAdminStateStoriesLayoutState extends State<ItemAdminStateStoriesLayou
                           builder: (context) {
                             return AlertDialog(
                               title: Text(
-                                'Confirm Delete',
+                                LocaleKeys.confirmdelete.tr,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20.sp),
@@ -82,7 +83,7 @@ class _ItemAdminStateStoriesLayoutState extends State<ItemAdminStateStoriesLayou
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Do you want to delete this story?',
+                                    LocaleKeys.doyouwanttodeletethisstory.tr,
                                     style: normal_h2Style.copyWith(
                                         color: Colors.red),
                                   ),
@@ -95,12 +96,12 @@ class _ItemAdminStateStoriesLayoutState extends State<ItemAdminStateStoriesLayou
                                           onPressed: () {
                                             Get.back();
                                           },
-                                          child: Text('Yes')),
+                                          child: Text(LocaleKeys.yes.tr)),
                                       OutlinedButton(
                                           onPressed: () {
                                             Get.back();
                                           },
-                                          child: Text('NO')),
+                                          child: Text(LocaleKeys.no.tr)),
                                     ],
                                   )
                                 ],

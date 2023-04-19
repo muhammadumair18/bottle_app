@@ -1,3 +1,4 @@
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/view/layout/item_admin_state_stories_layout.dart';
 import 'package:bottle_app/view/screen/screen_admin_record_video_screen.dart';
 import 'package:custom_utils/custom_utils.dart';
@@ -66,7 +67,7 @@ class _ScreenAdminStateStoriesState extends State<ScreenAdminStateStories> {
                       height: 5.sp,
                     ),
                     Text(
-                      "Add New Story",
+                      LocaleKeys.addnewstory.tr,
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14.sp,

@@ -1,3 +1,4 @@
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/view/layout/item_admin_sub_admin.dart';
 import 'package:bottle_app/view/screen/screen_admin_add_new_sub_admin.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -26,7 +27,7 @@ class _ScreenAdminSubAdminsState extends State<ScreenAdminSubAdmins> {
               Get.back();
             },
             icon: Icon(Icons.arrow_back,color: Colors.black,)),
-        title: Center(child: Text('Sub Admins',style: TextStyle(color: Colors.black),)),
+        title: Center(child: Text(LocaleKeys.subadmins.tr,style: TextStyle(color: Colors.black),)),
         actions: [
           IconButton(
             onPressed: () {},
@@ -51,7 +52,7 @@ class _ScreenAdminSubAdminsState extends State<ScreenAdminSubAdmins> {
           if(snapshot.connectionState==ConnectionState.waiting){
             return Center(child: CircularProgressIndicator(color: Colors.blue,),);
           }
-          return Center(child: Text('No Data Available',style: TextStyle(color: Colors.red,fontSize: 12),));
+          return Center(child: Text(LocaleKeys.nodataavailable.tr,style: TextStyle(color: Colors.red,fontSize: 12),));
         },),
     );
   }

@@ -9,6 +9,7 @@ CollectionReference adminpostsref=FirebaseFirestore.instance.collection("adminpo
 CollectionReference adminusersref=FirebaseFirestore.instance.collection("adminusers");
 CollectionReference subadminref=FirebaseFirestore.instance.collection("subadmins");
 CollectionReference notificationref=FirebaseFirestore.instance.collection("notifications");
+bool english=true;
 
 
 Future<model.User> getUserData(String userid) async{

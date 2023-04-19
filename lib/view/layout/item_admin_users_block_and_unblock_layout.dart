@@ -1,4 +1,5 @@
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/interface/setstate_listener.dart';
 import 'package:bottle_app/view/screen/screen_admin_user_detail.dart';
 import 'package:custom_utils/custom_utils.dart';
@@ -65,25 +66,25 @@ class _ItemAdminUserLayoutState extends State<ItemAdminUserLayout> {
             trailing:widget.block==true ?
             GestureDetector(onTap: (){
               showDialog(context: context,builder: (context){return AlertDialog(
-                  title: Text("Alert"),
-                  content: Text("Are you sure to Block this user?"),
+                  title: Text(LocaleKeys.alert.tr),
+                  content: Text(LocaleKeys.areyousureyouwanttoblockthisuser.tr),
                   actions: [
                     OutlinedButton(
                         onPressed: () async {
                           Navigator.pop(context);
                           await userref.doc(widget.userIDToBlockUnblock).update({"isblocked": true}).then((value) {
-                            Get.snackbar("Blocked", "${widget.name} has been Blocked",backgroundColor: Colors.black,colorText: Colors.white,);
+                            Get.snackbar(LocaleKeys.blocked.tr, "${widget.name} ${LocaleKeys.hasbeenblocked.tr}",backgroundColor: Colors.black,colorText: Colors.white,);
                             widget.setthestate.callingSetState();
                           }).onError((error, stackTrace) {
-                            Get.snackbar('Error', error.toString(),backgroundColor: Colors.red,colorText: Colors.black,);
+                            Get.snackbar(LocaleKeys.error.tr, error.toString(),backgroundColor: Colors.red,colorText: Colors.black,);
                           });
                         },
-                        child: Text("Yes")),
+                        child: Text(LocaleKeys.yes.tr)),
                     OutlinedButton(
                         onPressed: () {
                           Get.back();
                         },
-                        child: Text("No")),
+                        child: Text(LocaleKeys.no.tr)),
                   ],
                 );
               });
@@ -91,7 +92,7 @@ class _ItemAdminUserLayoutState extends State<ItemAdminUserLayout> {
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 3,horizontal: 3),
                 child: Text(
-                  "Block",
+                  LocaleKeys.block.tr,
                   style: TextStyle(
                       color: Colors.red, fontWeight: FontWeight.w500, fontSize: 15.sp),
                 ),
@@ -99,25 +100,25 @@ class _ItemAdminUserLayoutState extends State<ItemAdminUserLayout> {
             ):
             GestureDetector(onTap: () async{
               showDialog(context: context,builder: (context){return AlertDialog(
-                title: Text("Alert"),
-                content: Text("Are you sure to Un-Block this user?"),
+                title: Text(LocaleKeys.alert.tr),
+                content: Text(LocaleKeys.areyousureyouwanttounblockthisuser.tr),
                 actions: [
                   OutlinedButton(
                       onPressed: () async {
                         Navigator.pop(context);
                         await userref.doc(widget.userIDToBlockUnblock).update({"isblocked": false}).then((value) {
-                          Get.snackbar("Un-Blocked", "${widget.name} has been Un-Blocked",backgroundColor: Colors.black,colorText: Colors.white,);
+                          Get.snackbar(LocaleKeys.unblocked.tr, "${widget.name} ${LocaleKeys.unblocked}",backgroundColor: Colors.black,colorText: Colors.white,);
                           widget.setthestate.callingSetState();
                         }).onError((error, stackTrace) {
-                          Get.snackbar('Error', error.toString(),backgroundColor: Colors.red,colorText: Colors.black,);
+                          Get.snackbar(LocaleKeys.error.tr, error.toString(),backgroundColor: Colors.red,colorText: Colors.black,);
                         });
                       },
-                      child: Text("Yes")),
+                      child: Text(LocaleKeys.yes.tr)),
                   OutlinedButton(
                       onPressed: () {
                         Get.back();
                       },
-                      child: Text("No")),
+                      child: Text(LocaleKeys.no.tr)),
                 ],
               );
               });
@@ -128,7 +129,7 @@ class _ItemAdminUserLayoutState extends State<ItemAdminUserLayout> {
                     borderRadius: BorderRadius.circular(15.sp),
                     border: Border.all(color: Colors.black)
                 ),
-                child: Text('Unblock',style: TextStyle(
+                child: Text(LocaleKeys.unblock.tr,style: TextStyle(
                     fontSize: 14.sp,fontWeight: FontWeight.w500
                 ),),
               ),

@@ -9,6 +9,7 @@ class RegistrationController extends GetxController{
   RxBool checkBoxValue=false.obs;
   final GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
   RxBool isloading=false.obs;
+  RxBool isenglish=true.obs;
 
 
 

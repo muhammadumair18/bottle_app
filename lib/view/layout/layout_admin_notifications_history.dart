@@ -1,4 +1,5 @@
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/model/notifications.dart';
 import 'package:bottle_app/view/layout/item_admin_notifications_history.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -35,7 +36,7 @@ class LayoutAdminNotificationsHistory extends StatelessWidget {
                 );
               });
         }
-        return Center(child: Text('Error in loading data',style: TextStyle(color: Colors.red,fontSize: 12),),);
+        return Center(child: Text(LocaleKeys.errorinloadingdata.tr,style: TextStyle(color: Colors.red,fontSize: 12),),);
       },
     );
   }

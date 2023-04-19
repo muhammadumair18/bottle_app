@@ -1,4 +1,5 @@
 import 'package:bottle_app/constants/helpers.dart';
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:bottle_app/view/layout/item_video_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -70,7 +71,7 @@ class _ItemAdminPostsLayoutState extends State<ItemAdminPostsLayout> {
               padding: EdgeInsets.symmetric(vertical: 5),
               child: Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Likes',style: TextStyle(color: Colors.black,fontSize: 20),),
+                  Text(LocaleKeys.likes.tr,style: TextStyle(color: Colors.black,fontSize: 20),),
                   SizedBox(width: 7,),
                   Text(widget.likesLength.toString(),style: TextStyle(color: Colors.black,fontSize: 20),),
               ],),

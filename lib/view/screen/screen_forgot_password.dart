@@ -1,3 +1,4 @@
+import 'package:bottle_app/generated/locales.g.dart';
 import 'package:custom_utils/custom_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,7 @@ class ScreenForgotPassword extends StatelessWidget {
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Forgot Password',
+                    LocaleKeys.forgotpassword.tr,
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 20.sp,
@@ -41,7 +42,7 @@ class ScreenForgotPassword extends StatelessWidget {
                     height: 9.sp,
                   ),
                   Text(
-                    'Enter your email to recover your password',
+                    LocaleKeys.enteryouremailtorecoverpassword.tr,
                     style: TextStyle(
                         color: Colors.black.withOpacity(.5),
                         fontSize: 12.sp,
@@ -68,7 +69,7 @@ class ScreenForgotPassword extends StatelessWidget {
                 //   title = value;
                 // },
                 decoration: InputDecoration(hintStyle: TextStyle(color: Colors.black.withOpacity(.5),fontSize: 17),
-                  hintText: 'Email',
+                  hintText: LocaleKeys.email.tr,
                   fillColor: Color(0xFFF6F6F6),
                   filled: true,
                   contentPadding: EdgeInsets.symmetric(
@@ -103,7 +104,7 @@ class ScreenForgotPassword extends StatelessWidget {
                     ]
                 ),
                 child: Center(
-                  child: Text('Send',style: TextStyle(
+                  child: Text(LocaleKeys.send.tr,style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
                       color: Colors.white
